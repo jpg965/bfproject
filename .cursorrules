@@ -1,0 +1,151 @@
+# ============================================================
+# BFProject — AI 编码规范
+# ============================================================
+# 此文件为 AI 编码助手（Cursor / Copilot / Trae 等）提供项目级
+# 的编码约束和约定。AI 在生成、修改或建议代码时必须遵守以下规则。
+
+# ============================================================
+# 1. 项目概述
+# ============================================================
+# 项目名称: BFProject
+# 类型: 前后端分离的 Monorepo 全栈应用
+# 包管理: pnpm >= 8.0.0 (workspace)
+# Node: >= 18.0.0
+
+# ============================================================
+# 2. 技术栈
+# ============================================================
+# 前端: Vue 3 (Composition API + <script setup>) + TypeScript + Vite 5 + Element Plus 2.x
+# 后端: Express 4.x + TypeScript + tsx (热重载)
+# 共享包: TypeScript 类型与常量定义
+# 主题: Element Plus 暗色主题 (CSS 变量方式)
+# 语言: 中文注释与提交信息
+
+# ============================================================
+# 3. 目录结构
+# ============================================================
+# monorepo/
+#   packages/
+#     shared/        # 前端+后端共享的类型、常量
+#       src/index.ts
+#     backend/       # Express API 服务 (端口 3001)
+#       src/index.ts
+#     frontend/      # Vue 3 SPA (端口 5173)
+#       src/
+#         main.ts
+#         App.vue
+#   pnpm-workspace.yaml
+#   tsconfig.base.json
+
+# ============================================================
+# 4. TypeScript 通用规范
+# ============================================================
+# - 所有新代码必须使用 TypeScript，禁止使用 any（除非有充分理由）
+# - 类型定义优先放在 shared 包中，前后端通过 import from 'shared' 引用
+# - 使用 interface 定义对象类型，type 定义联合类型/别名
+# - 导出类型时使用 export interface / export type，不使用 default export
+# - 后端 tsconfig 使用 CommonJS 模块，前端使用 ESM 模块
+
+# ============================================================
+# 5. Vue 3 前端规范
+# ============================================================
+
+## 5.1 组件写法
+# - 必须使用 <script setup lang="ts"> 语法
+# - 使用 Composition API (ref, reactive, computed, onMounted 等)
+# - 组件名使用 PascalCase，文件名使用 PascalCase（如 UserList.vue）
+# - 模板中使用 kebab-case 引用 Element Plus 组件（如 <el-table>）
+
+## 5.2 Element Plus 使用
+# - 组件前缀统一为 el-（如 el-button, el-table, el-dialog）
+# - 图标从 @element-plus/icons-vue 按需导入
+# - 使用 Element Plus 的 CSS 变量进行主题定制（如 var(--el-bg-color-page)）
+# - 暗色主题通过 html.dark 类名 + element-plus/theme-chalk/dark/css-vars.css 实现
+# - 中文语言包: element-plus/es/locale/lang/zh-cn
+
+## 5.3 样式规范
+# - 使用 scoped 样式
+# - 背景色用 var(--el-bg-color-page)，文字色用 var(--el-text-color-primary)
+# - 不使用内联 style，除非动态值
+# - 布局优先使用 el-container / el-header / el-main / el-aside
+
+## 5.4 API 调用
+# - 后端 API 前缀为 /api/v1，通过 Vite proxy 转发到 localhost:3001
+# - 请求/响应类型必须使用 shared 包中的 ApiResponse<T> 等类型
+# - 错误处理必须有 try/catch，显示用户友好的错误提示
+
+## 5.5 状态管理
+# - 简单状态用 ref/reactive 即可
+# - 跨组件状态建议使用 provide/inject 或 Pinia（如需要）
+
+# ============================================================
+# 6. 后端 Express 规范
+# ============================================================
+
+## 6.1 路由
+# - 所有路由以 /api/v1 开头（使用 shared 包中的 API_PREFIX 常量）
+# - RESTful 风格: GET 查询, POST 创建, PUT 更新, DELETE 删除
+# - 路由用模块化方式组织，按领域拆分文件（如 users.routes.ts）
+
+## 6.2 响应格式
+# - 统一使用 ApiResponse<T> 格式: { code: number, message: string, data: T }
+# - 成功: code = 0
+# - 客户端错误: code = 4xx, 设置对应的 HTTP 状态码
+# - 分页接口: data 使用 PaginatedData<T> 格式
+
+## 6.3 中间件
+# - CORS 允许 origin: http://localhost:5173
+# - express.json() 解析请求体
+
+## 6.4 开发
+# - 使用 tsx watch 实现热重载
+# - 端口默认 3001，可通过 PORT 环境变量覆盖
+
+# ============================================================
+# 7. shared 共享包规范
+# ============================================================
+
+# - 只放类型定义和常量，不包含运行时代码
+# - 按领域分块注释（如 // ==== 用户相关类型 ====）
+# - 导出通过 index.ts 统一 barrel export
+# - 前端和后端通过 workspace:* 协议引用
+# - 修改 shared 后需要重新编译: pnpm --filter shared build
+
+# ============================================================
+# 8. 命名规范
+# ============================================================
+# 文件/目录: kebab-case（如 user-service.ts, use-users.ts）
+# Vue 组件文件: PascalCase（如 UserList.vue, UserDetail.vue）
+# 类型/接口: PascalCase（如 User, CreateUserRequest）
+# 变量/函数: camelCase（如 fetchUsers, userList）
+# 常量: UPPER_SNAKE_CASE（如 API_PREFIX, MAX_PAGE_SIZE）
+# 组合式函数: use 前缀（如 useUsers, useAuth）
+
+# ============================================================
+# 9. Git 规范
+# ============================================================
+# 提交信息格式: <type>: <简短描述>
+# type 类型: feat, fix, refactor, style, docs, chore, perf, test
+# 示例:
+#   feat: 添加用户详情页
+#   fix: 修复暗色主题表格边框颜色
+#   refactor: 提取 users API 路由模块
+
+# ============================================================
+# 10. 禁止事项
+# ============================================================
+# - 禁止使用 any 类型（除非必要并注释说明原因）
+# - 禁止在 shared 包中引入运行时依赖
+# - 禁止在 .vue 文件中使用 Options API，必须用 Composition API
+# - 禁止直接操作 DOM，应使用 Vue 响应式绑定
+# - 禁止修改 pnpm-lock.yaml 手动编辑
+# - 禁止在提交中包含 .env 等敏感文件
+
+# ============================================================
+# 11. 代码生成原则
+# ============================================================
+# - 生成新组件时，必须同步定义类型（复杂类型放入 shared 包）
+# - 生成新 API 接口时，必须同步更新 shared 包中的类型定义
+# - 保持代码简洁，单个文件不超过 300 行
+# - 优先复用 Element Plus 组件，避免重复造轮子
+# - 所有文案使用中文
