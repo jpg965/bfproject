@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		093BA7F0D6309BE0A3BECEF2 /* SSEClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A6AA511C9C473D3E4CDB8 /* SSEClient.swift */; };
+		35FFD1F72F48E0545263DB7D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5EDB8845466C031470105 /* DataStore.swift */; };
+		408883CA8506F48A7A1CA06C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29354498EE318685919BAF0E /* Message.swift */; };
+		52BB9BAADF63F2053CC44BAE /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF1A920B4B1DA1C39ED248 /* ServerConfig.swift */; };
+		57E0F7BBA9D8755F22A93FEC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F391E3EA5E769E3BA4A718 /* APIClient.swift */; };
+		804DD45DA8C0EACAF1653224 /* SessionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCFC6BECA7DCC688CCA6013 /* SessionListView.swift */; };
+		86D601DC794701D2BA2B8251 /* SessionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152DA0EE278B6E31A1A5B58E /* SessionListViewModel.swift */; };
+		8E183FAFBD410CB0B677AF4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F2E814A38F0C058919D3CA /* ContentView.swift */; };
+		8EF2CEF88A580F346D6492CF /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932CD877F416469C76844037 /* APIEndpoint.swift */; };
+		A157D8979589547C477662DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245931E37448248F34A3F59 /* SettingsView.swift */; };
+		A1A449867D248FCCD5359327 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D900D78469D1EF09182E8EF /* Session.swift */; };
+		ABA646BEAECA8739C68FBFB6 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C307D45AD5A8CF601C7E94 /* MessageRowView.swift */; };
+		BD9F33F899AFFC090CE07C5C /* OpenCodeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E4855E343B658992BEDB32 /* OpenCodeModels.swift */; };
+		CBB3DDF05693EE0DCDABAEF6 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AD49FF847E4C3F505201E /* KeychainHelper.swift */; };
+		CFD1181178660A2D98920848 /* ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB16E68CBEEC06EED8E26D /* ConnectionViewModel.swift */; };
+		D5E0F6B519C5A88400852BCB /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE93860D9E05A60B1B597E7 /* ChatView.swift */; };
+		D9936A5B00EC02D0B2FB87E9 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889A2BC308A39034029C1153 /* ChatViewModel.swift */; };
+		E1665764732D7DA35D42CF75 /* OpenCodeMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_5A88E82B-DCBE-4215-8768-8CA3BB24A484" /* OpenCodeMobileApp.swift */; };
+		FE03A38E7135CE8402CC9C8F /* AppLifecycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F74FD1F4EEFDA7346D5D2 /* AppLifecycleManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02F391E3EA5E769E3BA4A718 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		152DA0EE278B6E31A1A5B58E /* SessionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListViewModel.swift; sourceTree = "<group>"; };
+		1FE93860D9E05A60B1B597E7 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		29354498EE318685919BAF0E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		363F74FD1F4EEFDA7346D5D2 /* AppLifecycleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleManager.swift; sourceTree = "<group>"; };
+		3BCFC6BECA7DCC688CCA6013 /* SessionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListView.swift; sourceTree = "<group>"; };
+		3D900D78469D1EF09182E8EF /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		4CD5EDB8845466C031470105 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		54AF1A920B4B1DA1C39ED248 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		889A2BC308A39034029C1153 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		932CD877F416469C76844037 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		95C307D45AD5A8CF601C7E94 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
+		BC7836B32C85D2401C8ACE3F /* OpenCodeMobile.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OpenCodeMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21A6AA511C9C473D3E4CDB8 /* SSEClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSEClient.swift; sourceTree = "<group>"; };
+		D2E4855E343B658992BEDB32 /* OpenCodeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCodeModels.swift; sourceTree = "<group>"; };
+		D2F2E814A38F0C058919D3CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F245931E37448248F34A3F59 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F53AD49FF847E4C3F505201E /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		FCCB16E68CBEEC06EED8E26D /* ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewModel.swift; sourceTree = "<group>"; };
+		"TEMP_5A88E82B-DCBE-4215-8768-8CA3BB24A484" /* OpenCodeMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCodeMobileApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0A2854E600A31DF787541CBA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				02F391E3EA5E769E3BA4A718 /* APIClient.swift */,
+				932CD877F416469C76844037 /* APIEndpoint.swift */,
+				C21A6AA511C9C473D3E4CDB8 /* SSEClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		50F971325167F7E2EBA762E6 = {
+			isa = PBXGroup;
+			children = (
+				C1E365A467148567C73E9A93 /* Models */,
+				0A2854E600A31DF787541CBA /* Networking */,
+				EE48FC39D0EF04EF4206DF7B /* Persistence */,
+				F388E313A75D776FCC744EBE /* Utilities */,
+				78136A23A156F5E0A9DF3D11 /* ViewModels */,
+				AD05DF0FD057ABE022E2C29B /* Views */,
+				6DBA0B4C184ACF02DE962979 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6DBA0B4C184ACF02DE962979 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC7836B32C85D2401C8ACE3F /* OpenCodeMobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78136A23A156F5E0A9DF3D11 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				889A2BC308A39034029C1153 /* ChatViewModel.swift */,
+				FCCB16E68CBEEC06EED8E26D /* ConnectionViewModel.swift */,
+				152DA0EE278B6E31A1A5B58E /* SessionListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AD05DF0FD057ABE022E2C29B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FE93860D9E05A60B1B597E7 /* ChatView.swift */,
+				D2F2E814A38F0C058919D3CA /* ContentView.swift */,
+				95C307D45AD5A8CF601C7E94 /* MessageRowView.swift */,
+				3BCFC6BECA7DCC688CCA6013 /* SessionListView.swift */,
+				F245931E37448248F34A3F59 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C1E365A467148567C73E9A93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29354498EE318685919BAF0E /* Message.swift */,
+				D2E4855E343B658992BEDB32 /* OpenCodeModels.swift */,
+				54AF1A920B4B1DA1C39ED248 /* ServerConfig.swift */,
+				3D900D78469D1EF09182E8EF /* Session.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE48FC39D0EF04EF4206DF7B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4CD5EDB8845466C031470105 /* DataStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		F388E313A75D776FCC744EBE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				363F74FD1F4EEFDA7346D5D2 /* AppLifecycleManager.swift */,
+				F53AD49FF847E4C3F505201E /* KeychainHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		"TEMP_323C9431-E6AD-45AF-8CD1-E45F18B6993F" /* . */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_5A88E82B-DCBE-4215-8768-8CA3BB24A484" /* OpenCodeMobileApp.swift */,
+				78136A23A156F5E0A9DF3D11 /* ViewModels */,
+				0A2854E600A31DF787541CBA /* Networking */,
+				C1E365A467148567C73E9A93 /* Models */,
+				F388E313A75D776FCC744EBE /* Utilities */,
+				EE48FC39D0EF04EF4206DF7B /* Persistence */,
+				AD05DF0FD057ABE022E2C29B /* Views */,
+			);
+			name = .;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA1C787C2374FDB3E925ACCA /* OpenCodeMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FA85B8C25E66DF7C331AD19 /* Build configuration list for PBXNativeTarget "OpenCodeMobile" */;
+			buildPhases = (
+				90D96A1E69F623C172D3E3DF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenCodeMobile;
+			packageProductDependencies = (
+			);
+			productName = OpenCodeMobile;
+			productReference = BC7836B32C85D2401C8ACE3F /* OpenCodeMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D94A8D68CD66A3DCAF61A300 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 6BF1CB092C2D62F059180E46 /* Build configuration list for PBXProject "OpenCodeMobile" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 50F971325167F7E2EBA762E6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6DBA0B4C184ACF02DE962979 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA1C787C2374FDB3E925ACCA /* OpenCodeMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90D96A1E69F623C172D3E3DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57E0F7BBA9D8755F22A93FEC /* APIClient.swift in Sources */,
+				8EF2CEF88A580F346D6492CF /* APIEndpoint.swift in Sources */,
+				FE03A38E7135CE8402CC9C8F /* AppLifecycleManager.swift in Sources */,
+				D5E0F6B519C5A88400852BCB /* ChatView.swift in Sources */,
+				D9936A5B00EC02D0B2FB87E9 /* ChatViewModel.swift in Sources */,
+				CFD1181178660A2D98920848 /* ConnectionViewModel.swift in Sources */,
+				8E183FAFBD410CB0B677AF4F /* ContentView.swift in Sources */,
+				35FFD1F72F48E0545263DB7D /* DataStore.swift in Sources */,
+				CBB3DDF05693EE0DCDABAEF6 /* KeychainHelper.swift in Sources */,
+				408883CA8506F48A7A1CA06C /* Message.swift in Sources */,
+				ABA646BEAECA8739C68FBFB6 /* MessageRowView.swift in Sources */,
+				E1665764732D7DA35D42CF75 /* OpenCodeMobileApp.swift in Sources */,
+				BD9F33F899AFFC090CE07C5C /* OpenCodeModels.swift in Sources */,
+				093BA7F0D6309BE0A3BECEF2 /* SSEClient.swift in Sources */,
+				52BB9BAADF63F2053CC44BAE /* ServerConfig.swift in Sources */,
+				A1A449867D248FCCD5359327 /* Session.swift in Sources */,
+				804DD45DA8C0EACAF1653224 /* SessionListView.swift in Sources */,
+				86D601DC794701D2BA2B8251 /* SessionListViewModel.swift in Sources */,
+				A157D8979589547C477662DD /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		02E4FEB8E5CCEE4B78D7EEB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.opencode.mobile;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B63AE1E9ED83FA3891985A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.opencode.mobile;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B4E5C0A7A31781D349138BD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B88C126B7721954FE39F3101 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6BF1CB092C2D62F059180E46 /* Build configuration list for PBXProject "OpenCodeMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4E5C0A7A31781D349138BD2 /* Debug */,
+				B88C126B7721954FE39F3101 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6FA85B8C25E66DF7C331AD19 /* Build configuration list for PBXNativeTarget "OpenCodeMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02E4FEB8E5CCEE4B78D7EEB4 /* Debug */,
+				6B63AE1E9ED83FA3891985A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D94A8D68CD66A3DCAF61A300 /* Project object */;
+}

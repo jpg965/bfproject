@@ -57,13 +57,14 @@ final class DataStore {
 
     init() {
         do {
-            container = try ModelContainer(
+            let modelContainer = try ModelContainer(
                 for: CachedSession.self, CachedMessage.self,
                 configurations: ModelConfiguration(schema: Schema([
                     CachedSession.self, CachedMessage.self
                 ]))
             )
-            context = container.mainContext
+            container = modelContainer
+            context = ModelContext(modelContainer)
         } catch {
             fatalError("SwiftData 初始化失败: \(error)")
         }
@@ -180,11 +181,13 @@ final class DataStore {
             predicate: #Predicate { $0.id == sessionID }
         )
         if let session = try? context.fetch(sessionDescriptor).first {
-            session.lastMessagePreview = messages.last?.parts
-                .filter { $0.isTextType }
-                .map { $0.displayText }
-                .joined(separator: "\n")
-                .map { String($0.prefix(100)) }
+            if let lastMessage = messages.last {
+                let text = lastMessage.parts
+                    .filter { $0.isTextType }
+                    .map { $0.displayText }
+                    .joined(separator: "\n")
+                session.lastMessagePreview = String(text.prefix(100))
+            }
             session.updatedAt = Date()
         }
         save()

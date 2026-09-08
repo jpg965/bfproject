@@ -28,8 +28,6 @@ struct Provider: Codable, Identifiable, Hashable {
     let models: [Model]?
     let configured: Bool?         // 是否已配置 API key
 
-    var id: String { id }
-
     struct Model: Codable, Identifiable, Hashable {
         let id: String           // model ID
         let name: String?
@@ -37,8 +35,6 @@ struct Provider: Codable, Identifiable, Hashable {
         let reasoning: Bool?
         let cost: CostInfo?
         let limit: Int?          // 上下文窗口大小
-
-        var id: String { id }
 
         struct CostInfo: Codable, Hashable {
             let input: Double?
@@ -74,7 +70,7 @@ struct ProviderAuthResponse: Codable {
             let description: String?
             let required: Bool?
             let secret: Bool?
-            let default: String?
+            let `default`: String?
         }
     }
 }
@@ -88,8 +84,6 @@ struct Command: Codable, Identifiable, Hashable {
     let description: String?
     let group: String?
     let keywords: [String]?
-
-    var id: String { id }
 }
 
 // MARK: - Config

@@ -30,25 +30,28 @@ final class ConnectionViewModel {
 
     init() {
         // 从 UserDefaults 加载配置
+        let loadedConfig: ServerConfig
         if let data = UserDefaults.standard.data(forKey: "ServerConfig"),
            let config = try? JSONDecoder().decode(ServerConfig.self, from: data) {
-            self.serverConfig = config
+            loadedConfig = config
         } else {
-            self.serverConfig = ServerConfig()
+            loadedConfig = ServerConfig()
         }
+        self.serverConfig = loadedConfig
 
         // 从 Keychain 加载密码
-        self.password = KeychainHelper.load() ?? ""
+        let loadedPassword = KeychainHelper.load() ?? ""
+        self.password = loadedPassword
 
-        self.apiClient = APIClient(serverConfig: serverConfig, password: password.isEmpty ? nil : password)
+        self.apiClient = APIClient(serverConfig: loadedConfig, password: loadedPassword.isEmpty ? nil : loadedPassword)
         self.sseClient = SSEClient()
 
         // 配置生命周期管理器
         AppLifecycleManager.shared.configure(
             apiClient: apiClient,
             sseClient: sseClient,
-            serverConfig: serverConfig,
-            password: password.isEmpty ? nil : password
+            serverConfig: loadedConfig,
+            password: loadedPassword.isEmpty ? nil : loadedPassword
         )
     }
 
