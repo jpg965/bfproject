@@ -143,6 +143,56 @@ opencode serve --hostname 0.0.0.0 --port 4096
 - [ ] 暗色/亮色主题切换
 - [ ] iPad 适配
 
+## Git 推送
+
+项目已配置 Git credential helper，后续推送无需手动传 Token。
+
+### 便捷推送
+
+```bash
+# 提交所有变更并推送
+./scripts/push.sh
+
+# 指定 commit message
+./scripts/push.sh "feat: add new feature"
+
+# 拉取远程更新
+./scripts/push.sh --pull
+
+# 查看状态
+./scripts/push.sh --status
+```
+
+### GitHub 技能 (SkillHub)
+
+已安装 `@clawhub_dannyshmueli/github-token` 技能，支持通过 Python 脚本操作 GitHub：
+
+```bash
+# 列出仓库
+GITHUB_TOKEN=$GITHUB_TOKEN python3 .trae/skills/@clawhub_dannyshmueli/github-token/scripts/gh.py repos
+
+# 查看仓库信息
+python3 .trae/skills/@clawhub_dannyshmueli/github-token/scripts/gh.py info jpg965/bfproject
+
+# 创建分支
+python3 .trae/skills/@clawhub_dannyshmueli/github-token/scripts/gh.py branch feature-branch
+
+# 创建 PR
+python3 .trae/skills/@clawhub_dannyshmueli/github-token/scripts/gh.py pr "PR title" --base main --head feature-branch
+
+# 创建 Issue
+python3 .trae/skills/@clawhub_dannyshmueli/github-token/scripts/gh.py issue "Issue title" --repo jpg965/bfproject
+```
+
+### 配置位置
+
+| 配置项 | 位置 |
+|--------|------|
+| GitHub Token | `~/.git-credentials` + `GITHUB_TOKEN` 环境变量 |
+| Token 工具配置 | `.trae/TOOLS.md` |
+| Git credential helper | `git config --local credential.helper store` |
+| 推送脚本 | `scripts/push.sh` |
+
 ## 技术决策说明
 
 | 决策 | 选择 | 理由 |
