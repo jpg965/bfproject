@@ -26,6 +26,15 @@
 		D9936A5B00EC02D0B2FB87E9 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889A2BC308A39034029C1153 /* ChatViewModel.swift */; };
 		E1665764732D7DA35D42CF75 /* OpenCodeMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_5A88E82B-DCBE-4215-8768-8CA3BB24A484" /* OpenCodeMobileApp.swift */; };
 		FE03A38E7135CE8402CC9C8F /* AppLifecycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F74FD1F4EEFDA7346D5D2 /* AppLifecycleManager.swift */; };
+		BB0000000000000000000001 /* RemoteCodeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* RemoteCodeActivityAttributes.swift */; };
+		BB0000000000000000000002 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000002 /* SharedStore.swift */; };
+		BB0000000000000000000003 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000003 /* LiveActivityManager.swift */; };
+		BB0000000000000000000004 /* RemoteCodeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* RemoteCodeActivityAttributes.swift */; };
+		BB0000000000000000000005 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000002 /* SharedStore.swift */; };
+		BB0000000000000000000006 /* RemoteCodeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000004 /* RemoteCodeWidgetBundle.swift */; };
+		BB0000000000000000000007 /* RemoteCodeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000005 /* RemoteCodeWidget.swift */; };
+		BB0000000000000000000008 /* RemoteCodeLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000006 /* RemoteCodeLiveActivity.swift */; };
+		BB0000000000000000000009 /* RemoteCodeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000007 /* RemoteCodeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +58,16 @@
 		F53AD49FF847E4C3F505201E /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		FCCB16E68CBEEC06EED8E26D /* ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewModel.swift; sourceTree = "<group>"; };
 		"TEMP_5A88E82B-DCBE-4215-8768-8CA3BB24A484" /* OpenCodeMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCodeMobileApp.swift; sourceTree = "<group>"; };
+		AA0000000000000000000001 /* RemoteCodeActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCodeActivityAttributes.swift; sourceTree = "<group>"; };
+		AA0000000000000000000002 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		AA0000000000000000000003 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+		AA0000000000000000000004 /* RemoteCodeWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCodeWidgetBundle.swift; sourceTree = "<group>"; };
+		AA0000000000000000000005 /* RemoteCodeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCodeWidget.swift; sourceTree = "<group>"; };
+		AA0000000000000000000006 /* RemoteCodeLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCodeLiveActivity.swift; sourceTree = "<group>"; };
+		AA0000000000000000000007 /* RemoteCodeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RemoteCodeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000008 /* OpenCodeMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenCodeMobile.entitlements; sourceTree = "<group>"; };
+		AA0000000000000000000009 /* RemoteCodeWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemoteCodeWidget.entitlements; sourceTree = "<group>"; };
+		AA000000000000000000000A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -79,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				BC7836B32C85D2401C8ACE3F /* OpenCodeMobile.app */,
+				AA0000000000000000000007 /* RemoteCodeWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +149,7 @@
 			children = (
 				363F74FD1F4EEFDA7346D5D2 /* AppLifecycleManager.swift */,
 				F53AD49FF847E4C3F505201E /* KeychainHelper.swift */,
+				AA0000000000000000000003 /* LiveActivityManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -137,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				"TEMP_5A88E82B-DCBE-4215-8768-8CA3BB24A484" /* OpenCodeMobileApp.swift */,
+				AA0000000000000000000008 /* OpenCodeMobile.entitlements */,
+				CC0000000000000000000001 /* RemoteCodeWidget */,
 				78136A23A156F5E0A9DF3D11 /* ViewModels */,
 				0A2854E600A31DF787541CBA /* Networking */,
 				C1E365A467148567C73E9A93 /* Models */,
@@ -148,6 +171,21 @@
 			path = .;
 			sourceTree = "<group>";
 		};
+		CC0000000000000000000001 /* RemoteCodeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000001 /* RemoteCodeActivityAttributes.swift */,
+				AA0000000000000000000002 /* SharedStore.swift */,
+				AA0000000000000000000004 /* RemoteCodeWidgetBundle.swift */,
+				AA0000000000000000000005 /* RemoteCodeWidget.swift */,
+				AA0000000000000000000006 /* RemoteCodeLiveActivity.swift */,
+				AA000000000000000000000A /* Info.plist */,
+				AA0000000000000000000009 /* RemoteCodeWidget.entitlements */,
+			);
+			name = RemoteCodeWidget;
+			path = RemoteCodeWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,10 +194,12 @@
 			buildConfigurationList = 6FA85B8C25E66DF7C331AD19 /* Build configuration list for PBXNativeTarget "OpenCodeMobile" */;
 			buildPhases = (
 				90D96A1E69F623C172D3E3DF /* Sources */,
+				DD0000000000000000000004 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FF0000000000000000000002 /* PBXTargetDependency */,
 			);
 			name = OpenCodeMobile;
 			packageProductDependencies = (
@@ -168,7 +208,44 @@
 			productReference = BC7836B32C85D2401C8ACE3F /* OpenCodeMobile.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EE0000000000000000000001 /* RemoteCodeWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 101111111111111111111113 /* Build configuration list for PBXNativeTarget "RemoteCodeWidget" */;
+			buildPhases = (
+				DD0000000000000000000001 /* Sources */,
+				DD0000000000000000000002 /* Frameworks */,
+				DD0000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemoteCodeWidget;
+			packageProductDependencies = (
+			);
+			productName = RemoteCodeWidget;
+			productReference = AA0000000000000000000007 /* RemoteCodeWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
+
+/* Begin PBXContainerItemProxy section */
+		FF0000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D94A8D68CD66A3DCAF61A300 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE0000000000000000000001;
+			remoteInfo = RemoteCodeWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		FF0000000000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE0000000000000000000001 /* RemoteCodeWidget */;
+			targetProxy = FF0000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXProject section */
 		D94A8D68CD66A3DCAF61A300 /* Project object */ = {
@@ -194,6 +271,7 @@
 			projectRoot = "";
 			targets = (
 				AA1C787C2374FDB3E925ACCA /* OpenCodeMobile */,
+				EE0000000000000000000001 /* RemoteCodeWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -212,20 +290,69 @@
 				8E183FAFBD410CB0B677AF4F /* ContentView.swift in Sources */,
 				35FFD1F72F48E0545263DB7D /* DataStore.swift in Sources */,
 				CBB3DDF05693EE0DCDABAEF6 /* KeychainHelper.swift in Sources */,
+				BB0000000000000000000003 /* LiveActivityManager.swift in Sources */,
 				408883CA8506F48A7A1CA06C /* Message.swift in Sources */,
 				ABA646BEAECA8739C68FBFB6 /* MessageRowView.swift in Sources */,
+				86D601DC794701D2BA2B8251 /* SessionListViewModel.swift in Sources */,
 				E1665764732D7DA35D42CF75 /* OpenCodeMobileApp.swift in Sources */,
 				BD9F33F899AFFC090CE07C5C /* OpenCodeModels.swift in Sources */,
+				BB0000000000000000000001 /* RemoteCodeActivityAttributes.swift in Sources */,
+				BB0000000000000000000002 /* SharedStore.swift in Sources */,
 				093BA7F0D6309BE0A3BECEF2 /* SSEClient.swift in Sources */,
 				52BB9BAADF63F2053CC44BAE /* ServerConfig.swift in Sources */,
 				A1A449867D248FCCD5359327 /* Session.swift in Sources */,
 				804DD45DA8C0EACAF1653224 /* SessionListView.swift in Sources */,
-				86D601DC794701D2BA2B8251 /* SessionListViewModel.swift in Sources */,
 				A157D8979589547C477662DD /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD0000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0000000000000000000004 /* RemoteCodeActivityAttributes.swift in Sources */,
+				BB0000000000000000000005 /* SharedStore.swift in Sources */,
+				BB0000000000000000000006 /* RemoteCodeWidgetBundle.swift in Sources */,
+				BB0000000000000000000007 /* RemoteCodeWidget.swift in Sources */,
+				BB0000000000000000000008 /* RemoteCodeLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD0000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD0000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD0000000000000000000004 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BB0000000000000000000009 /* RemoteCodeWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		02E4FEB8E5CCEE4B78D7EEB4 /* Debug */ = {
@@ -234,21 +361,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = OpenCodeMobile.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.opencode.mobile;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.9;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
+			INFOPLIST_KEY_CFBundleDisplayName = "Remote Code";
+			INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+			INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+			INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+			INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+			INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
+			LD_RUNPATH_SEARCH_PATHS = (
+				"$(inherited)",
+				"@executable_path/Frameworks",
+			);
+			MARKETING_VERSION = 1.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.opencode.mobile;
+			SDKROOT = iphoneos;
+			SWIFT_VERSION = 5.9;
+			TARGETED_DEVICE_FAMILY = "1,2";
+		};
+		name = Debug;
 		};
 		6B63AE1E9ED83FA3891985A7 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -256,21 +388,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = OpenCodeMobile.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.opencode.mobile;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.9;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
+			INFOPLIST_KEY_CFBundleDisplayName = "Remote Code";
+			INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+			INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+			INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+			INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+			INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
+			LD_RUNPATH_SEARCH_PATHS = (
+				"$(inherited)",
+				"@executable_path/Frameworks",
+			);
+			MARKETING_VERSION = 1.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.opencode.mobile;
+			SDKROOT = iphoneos;
+			SWIFT_VERSION = 5.9;
+			TARGETED_DEVICE_FAMILY = "1,2";
+		};
+		name = Release;
 		};
 		B4E5C0A7A31781D349138BD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -395,6 +532,59 @@
 		};
 /* End XCBuildConfiguration section */
 
+/* Begin XCBuildConfiguration section */
+		101111111111111111111111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = RemoteCodeWidget/RemoteCodeWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RemoteCodeWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.opencode.mobile.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		101111111111111111111112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = RemoteCodeWidget/RemoteCodeWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RemoteCodeWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.opencode.mobile.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
 /* Begin XCConfigurationList section */
 		6BF1CB092C2D62F059180E46 /* Build configuration list for PBXProject "OpenCodeMobile" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +600,15 @@
 			buildConfigurations = (
 				02E4FEB8E5CCEE4B78D7EEB4 /* Debug */,
 				6B63AE1E9ED83FA3891985A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		101111111111111111111113 /* Build configuration list for PBXNativeTarget "RemoteCodeWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				101111111111111111111111 /* Debug */,
+				101111111111111111111112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

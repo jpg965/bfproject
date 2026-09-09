@@ -65,13 +65,26 @@ final class ConnectionViewModel {
             let health = try await apiClient.checkHealth()
             connectionState = .connected
             serverVersion = health.version
+            syncWidgetConnectionState(connected: true, version: health.version)
         } catch let error as APIError {
             connectionState = .error
             errorMessage = error.errorDescription
+            syncWidgetConnectionState(connected: false, version: nil)
         } catch {
             connectionState = .error
             errorMessage = error.localizedDescription
+            syncWidgetConnectionState(connected: false, version: nil)
         }
+    }
+
+    /// 同步连接状态到小组件快照
+    private func syncWidgetConnectionState(connected: Bool, version: String?) {
+        var snapshot = SharedStore.readSnapshot() ?? .empty
+        snapshot.isConnected = connected
+        snapshot.serverVersion = version
+        snapshot.currentStatusText = connected ? "已连接" : "连接失败"
+        snapshot.timestamp = Date()
+        SharedStore.updateSnapshot(snapshot)
     }
 
     /// 连接到服务器并启动 SSE
@@ -88,6 +101,7 @@ final class ConnectionViewModel {
     func disconnect() {
         sseClient.disconnect()
         connectionState = .disconnected
+        syncWidgetConnectionState(connected: false, version: nil)
     }
 
     // MARK: - 持久化

@@ -65,6 +65,11 @@ final class SessionListViewModel {
             // 缓存到本地
             dataStore.upsertSessions(remoteSessions)
 
+            // 同步会话数量到小组件快照
+            var snapshot = SharedStore.readSnapshot() ?? .empty
+            snapshot.sessionCount = remoteSessions.count
+            SharedStore.updateSnapshot(snapshot)
+
             // 同时拉取会话状态
             await fetchSessionStatus()
         } catch let error as APIError {

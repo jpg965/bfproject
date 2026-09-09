@@ -5,6 +5,7 @@ import SwiftUI
 // 管理单个会话的聊天交互: 消息拉取、发送、SSE 实时更新
 
 @Observable
+@MainActor
 final class ChatViewModel {
     var sessionID: String
     var messages: [MessageResponse] = []
@@ -21,9 +22,13 @@ final class ChatViewModel {
     private let apiClient: APIClient
     private let dataStore: DataStore
     private var sseClient: SSEClient
+    private let sessionTitle: String
+    private let liveActivity = LiveActivityManager.shared
 
-    init(sessionID: String, apiClient: APIClient, dataStore: DataStore, sseClient: SSEClient) {
+    init(sessionID: String, apiClient: APIClient, dataStore: DataStore, sseClient: SSEClient,
+         sessionTitle: String = "AI 会话") {
         self.sessionID = sessionID
+        self.sessionTitle = sessionTitle
         self.apiClient = apiClient
         self.dataStore = dataStore
         self.sseClient = sseClient
@@ -119,14 +124,22 @@ final class ChatViewModel {
         // 注册 SSE 事件处理
         setupSSEHandler()
 
+        // 启动灵动岛实时活动
+        liveActivity.startStreaming(sessionID: sessionID, sessionTitle: sessionTitle)
+        updateWidgetSnapshot()
+
         do {
             try await apiClient.sendAsyncMessage(sessionID: sessionID, text: text)
         } catch let error as APIError {
             errorMessage = error.errorDescription
             isStreaming = false
+            liveActivity.end(status: .failed)
+            updateWidgetSnapshot()
         } catch {
             errorMessage = error.localizedDescription
             isStreaming = false
+            liveActivity.end(status: .failed)
+            updateWidgetSnapshot()
         }
 
         isSending = false
@@ -186,6 +199,10 @@ final class ChatViewModel {
                 // 文本 Part: 累积到流式文本
                 streamingText += part.displayText
 
+                // 实时更新灵动岛
+                liveActivity.update(text: streamingText, status: .streaming)
+                updateWidgetSnapshot()
+
                 // 更新消息
                 let textPart = MessagePart(
                     id: part.id, type: part.type,
@@ -213,6 +230,8 @@ final class ChatViewModel {
 
         isStreaming = false
         streamingText = ""
+        liveActivity.end(status: .completed)
+        updateWidgetSnapshot()
 
         // 从服务器拉取最新完整消息列表
         Task {
@@ -224,6 +243,23 @@ final class ChatViewModel {
     private func handleMessageRemoved(_ event: SSEEvent) {
         guard let messageID = event.properties.messageID else { return }
         messages.removeAll { $0.info.id == messageID }
+    }
+
+    // MARK: - 小组件快照同步
+
+    /// 将当前聊天状态写入 App Group, 供小组件读取展示
+    private func updateWidgetSnapshot() {
+        var snapshot = SharedStore.readSnapshot() ?? .empty
+        snapshot.liveActivityRunning = isStreaming
+        let latestPreview = messages.last?
+            .parts
+            .filter { $0.isTextType }
+            .map { $0.displayText }
+            .joined(separator: "\n") ?? ""
+        snapshot.latestMessagePreview = String(latestPreview.prefix(120)).isEmpty ? "还没有消息" : String(latestPreview.prefix(120))
+        snapshot.currentStatusText = isStreaming ? "AI 正在生成..." : "就绪"
+        snapshot.timestamp = Date()
+        SharedStore.updateSnapshot(snapshot)
     }
 
     // MARK: - 拉取增量 (从后台恢复时)

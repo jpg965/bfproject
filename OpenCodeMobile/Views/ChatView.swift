@@ -26,7 +26,8 @@ struct ChatView: View {
                             sessionID: session.id,
                             apiClient: apiClient,
                             dataStore: dataStore,
-                            sseClient: sseClient
+                            sseClient: sseClient,
+                            sessionTitle: session.displayTitle
                         )
                         Task { await chatVM?.fetchMessages() }
                     }

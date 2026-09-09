@@ -13,6 +13,7 @@ struct OpenCodeMobileApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.dark)
                 .environment(connectionVM)
                 .environment(connectionVM.apiClient)
                 .environment(connectionVM.sseClient)

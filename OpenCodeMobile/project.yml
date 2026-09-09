@@ -12,6 +12,10 @@ targets:
       - path: .
         excludes:
           - "project.yml"
+        # 共享到 Widget Extension 的源码也编译进主 App 与扩展
+      - path: RemoteCodeWidget/RemoteCodeActivityAttributes.swift
+      - path: RemoteCodeWidget/SharedStore.swift
+      - path: OpenCodeMobile.entitlements
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.opencode.mobile
@@ -20,8 +24,36 @@ targets:
         SWIFT_VERSION: "5.9"
         TARGETED_DEVICE_FAMILY: "1,2"
         GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_ENTITLEMENTS: OpenCodeMobile.entitlements
         INFOPLIST_KEY_CFBundleDisplayName: "Remote Code"
+        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_NSSupportsLiveActivities: YES
+        INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates: YES
         CODE_SIGNING_ALLOWED: NO
         CODE_SIGN_IDENTITY: ""
+    dependencies:
+      - target: RemoteCodeWidget
+
+  RemoteCodeWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: RemoteCodeWidget
+        excludes:
+          - "RemoteCodeWidget.entitlements"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.opencode.mobile.widget
+        PRODUCT_NAME: RemoteCodeWidget
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: RemoteCodeWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: RemoteCodeWidget/RemoteCodeWidget.entitlements
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGN_IDENTITY: ""
+        SKIP_INSTALL: YES
